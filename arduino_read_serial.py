@@ -17,7 +17,7 @@ def read_arduino(com_port, baudrate, path_to_file):
                 values = data.split(";")
                 now = datetime.now()
                 values.append(now.strftime("%Y-%m-%d %H:%M:%S"))
-                print(values)
+
                 with open(path_to_file, "a", newline="") as f:
                     writer = csv.writer(f, delimiter=";")
                     writer.writerow(values)
